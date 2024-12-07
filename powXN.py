@@ -29,7 +29,7 @@ class Solution:
             x = 1/x         
             n = -n
             
-        result = 1.0
+        result = 1.0                # float
 
         while n != 0:
             if n%2 != 0:

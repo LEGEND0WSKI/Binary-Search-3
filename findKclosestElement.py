@@ -10,7 +10,7 @@ class Solution:
         h = n-1
 
         while l < h:
-            disA = abs(arr[l]-x)
+            disA = abs(arr[l]-x)            
             disB = abs(arr[h]-x)
 
             if disA <= disB:
@@ -20,7 +20,7 @@ class Solution:
 
         return arr[l:l+k]
     
-# Time: O(log(n-k)+k)
+# Time: O(log(n-k))
 # Space:O(1)
 # Leetcode: Yes
 # Issues:No
@@ -29,13 +29,13 @@ class Solution2:
     def findClosestElements(self, arr: List[int], k: int, x: int) -> List[int]:
         n = len(arr)
         low = 0
-        high = n-k
+        high = n-k                              # k less than n
 
         while low < high:
-            mid = low + (high-low)//2
+            mid = low + (high-low)//2           # mid point
 
-            disS = x - arr[mid]
-            disE = arr[mid+k] - x
+            disS = x - arr[mid]                 # start 13-mid
+            disE = arr[mid+k] - x               # end mid+3 -13
             
             if disS > disE:
                 low = mid +1
